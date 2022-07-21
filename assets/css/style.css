@@ -31,9 +31,24 @@
 .topnav .icon {
   display: none;
 }
+
+.search-container {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
+  .search-container input:not(:first-child) {display: none;}
+  .search-container input.fa {
+    float: right;
+    display: block;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -44,7 +59,7 @@
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
-    position: absolute;
+    position: right;
     right: 0;
     top: 0;
   }
@@ -55,68 +70,37 @@
   }
 }
 
-/* Style buttons */
-body .btn {
-  float: right;
-  border: 2px solid green;
-  background-color: dark;
-  color: green;
-  padding: 8px 24px;
-  font-size: 16px;
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 70%;
+}
+
+/* Make the image responsive */
+.container img {
+  top: 10px;
+  position: relative;
+  width: 100px;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+
+.container .btn {
+  position: relative;
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ff1a1a;
+  color: #ffff;
+  font-size: 20px;
+  padding: 4px 30px;
+  border: none;
   cursor: pointer;
+  border-radius: 8px;
 }
 
-.btn:hover {
-  background: #7fffd4;
-  padding: 20px;
-  left: 12px;
-  top: 12px;
-  right: 12px;
-  border: 2px solid green;
-  background-color: dark;
-  color: green;
-  padding: 8px 24px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Green */
-.success {
-  border-color: #04AA6D;
-  color: green;
-}
-
-#more {display: none;}
-
-body .text {
-  padding: 24px;
-  top: 20px;
-  left: 8px;
-}
-
-body .img {
-  padding: 20px;
-  top: 2px;
-  left: 4px;
-}
-
-body .te {
-  padding: 10px;
-  top: 6px;
-  left: 12px;
-}
-
-body .text {
-  top: 4px;
-  left: 2px;
-  right: 2px;
-  bottom: 4px;
-}
-
-.sec {
-  padding: 10px;
-  top: 6px;
-  left: 12px;
-  right: 12px;
-  bottom: 6px;
+.container .btn:hover {
+  background-color: #1a6600;
 }
